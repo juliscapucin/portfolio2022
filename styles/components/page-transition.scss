@@ -1,0 +1,15 @@
+.page__transition {
+  @extend %border-right;
+  display: flex;
+  flex-wrap: nowrap;
+  // justify-content: flex-start;
+  // align-items: center;
+  position: fixed;
+  top: 0;
+  right: -1rem;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  background-color: $color-white;
+  z-index: z('transition');
+}

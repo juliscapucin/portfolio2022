@@ -1,0 +1,177 @@
+.toggle__navigation {
+  z-index: z('burger');
+}
+
+//////////////
+/// BURGER ///
+//////////////
+
+.burger {
+  position: fixed;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  cursor: pointer;
+  pointer-events: none;
+  top: 5vw;
+  right: 10vw;
+  height: 3.6rem;
+  width: 3.6rem;
+  z-index: 100;
+  transition: 0.5s;
+
+  @include media('<phone') {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  span {
+    height: 1px;
+    width: 100%;
+    background-color: $color-black;
+  }
+
+  &.active {
+    position: fixed;
+    opacity: 1;
+    transform: rotate(-90deg);
+    pointer-events: auto;
+    transition: 0.5s;
+
+    span:nth-child(1) {
+      position: fixed;
+      background-color: $color-black;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    span:nth-child(2) {
+      opacity: 0;
+    }
+
+    span:nth-child(3) {
+      position: fixed;
+      background-color: $color-black;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+  }
+}
+
+.burger__bg,
+.burger__bg__toggle {
+  @extend %border-bottom;
+  position: fixed;
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100vw;
+  height: 10rem;
+  background-color: $color-white;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 99;
+  transition: 0.5s;
+
+  @include media('<phone') {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .burger__bg__sides {
+    width: 5vw;
+    height: 100%;
+  }
+
+  .burger__bg__center {
+    @extend %border-sides;
+    width: 90vw;
+    height: 100%;
+  }
+}
+
+.burger__bg {
+  transform: translateX(0);
+  &.active {
+    transform: translateX(99.7%);
+  }
+}
+
+.burger__bg__toggle {
+  transform: translateX(-99.7%);
+  &.active {
+    transform: translateX(0);
+  }
+}
+
+///////////////////
+/// TOGGLE NAV ///
+//////////////////
+
+.toggle__nav {
+  position: fixed;
+  display: flex;
+  flex-wrap: nowrap;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateX(-100%);
+  background-color: $color-white;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 19;
+  transition: 0.5s;
+
+  &.active {
+    transform: translateX(0);
+    pointer-events: auto;
+  }
+
+  @include media('<phone') {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+.toggle__nav__sides {
+  background-color: $color-white;
+  width: 5vw;
+}
+
+.toggle__nav__center {
+  @extend %border-sides;
+  width: 90vw;
+  top: 0;
+  bottom: 0;
+  padding-top: 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.toggle__nav__item {
+  @extend %subtitle;
+  @extend %border-bottom;
+  color: $color-black;
+  // margin-top: 10vw;
+  // left: -10%;
+  opacity: 0;
+  width: 90vw;
+  padding: 4rem 0 4rem 5rem;
+  z-index: 99;
+  transition: 0.2s;
+
+  a {
+    text-decoration: none;
+  }
+
+  &.active {
+    // left: 0%;
+    opacity: 1;
+    pointer-events: auto;
+  }
+}

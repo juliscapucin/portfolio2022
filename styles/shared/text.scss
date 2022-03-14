@@ -1,0 +1,65 @@
+%page-title {
+  font-size: $font-size-titles;
+  line-height: 0.68;
+  font-weight: 300;
+  @include media('<phone') {
+    font-size: $font-size-titles-mobile;
+  }
+}
+
+%subtitle {
+  font-size: $font-size-subtitles;
+  font-weight: 200;
+}
+
+%text-list {
+  font-size: $font-size-list;
+  font-weight: 200;
+}
+
+%text-menu {
+  font-size: $font-size-menu;
+  font-weight: 200;
+  line-height: 0.67;
+}
+
+%text-buttons {
+  font-size: $font-size-buttons;
+  font-weight: 200;
+}
+
+%text-highlight {
+  font-size: $font-size-text-highlight;
+  font-weight: 200;
+  line-height: 1.6;
+  @include media('<phone') {
+    font-size: $font-size-text-highlight-mobile;
+  }
+}
+
+%text-block {
+  font-size: $font-size-text;
+  font-weight: 200;
+  line-height: 1.6;
+  @include media('<phone') {
+    font-size: $font-size-text-mobile;
+    line-height: 1.8;
+  }
+}
+
+%text-lines {
+  display: flex;
+  justify-content: flex-end;
+  font-size: $font-size-subtitles;
+  line-height: 1;
+}
+
+.text__color__container {
+  position: absolute;
+  z-index: -1;
+}
+.text__color {
+  font-size: 50rem;
+  line-height: 0.7;
+  color: $color-extra;
+}

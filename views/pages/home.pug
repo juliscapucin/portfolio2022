@@ -1,0 +1,160 @@
+extends ../base.pug
+
+block variables
+  - var template = 'home'
+
+include ../svg-icons/svg-icons
+
+block content
+  include ../partials/page-transition
+  include ../partials/toggle-navigation
+  header.home.home__wrapper
+    include ../partials/navigation
+    .home__top__space
+    .home__intro__wrapper 
+      .home__intro__grid
+        .home__grid__hoi 
+          p.hoi__black(data-animation='reveal-bottom')='Hoi'
+          //- p.hoi__color='Hoi . Hello . Oi . Hola . Ciao . Salut . Hallo' 
+        .home__grid__item__ret1
+        .home__grid__index
+          //- .index__wrapper 
+          //-   p='Index'
+        .home__grid__item__quad1
+        .home__grid__item__linha1
+        .home__grid__item
+        .home__grid__item__text2
+          .home__reveal__paragraph(data-animation='reveal-bottom')
+            p!=PrismicDOM.RichText.asHtml(home.data.home_text_2)
+        .home__grid__item__quad2
+        .home__grid__item__text1
+          .home__mask__paragraph(data-animation='reveal-bottom')
+            p=home.data.home_text_1
+        .home__grid__item
+        .home__grid__item__linha3
+        .home__grid__item
+        .home__grid__scrolltip
+          .home__scrolltip__wrapper(data-animation='reveal-bottom')
+            p.btn__scroll='Scroll'
+              .arrow__down
+                +svg-icon(svg-icon-name='arrow-right')
+      
+      //-------- MOBILE -------//
+      .home__intro__grid__mobile
+
+        //- Line 1 -//
+        .home__grid__item__linha1
+
+        //- Line 2 & 3 -//
+        .home__grid__hoi 
+          p.hoi__black(data-animation='reveal-bottom')='Hoi'
+
+        //- Line 4 -//
+        .home__grid__item__linha2
+
+        //- Line 5 -//
+        .home__grid__item
+        .home__grid__item__text1
+          .home__mask__paragraph(data-animation='reveal-bottom')
+            p=home.data.home_text_1
+
+        
+        //- Line 6 -//
+        .home__grid__item__linha3
+
+        //- Line 7 & 8 -//
+        .home__grid__item__text2
+          .home__mask__paragraph(data-animation='reveal-bottom')
+            p!=PrismicDOM.RichText.asHtml(home.data.home_text_2)
+        .home__grid__item__column
+          .home__scrolltip__wrapper(data-animation='reveal-bottom')
+            p.btn.scrolltip__mobile='Scroll'
+            .arrow__down
+              +svg-icon(svg-icon-name='arrow-right')
+
+
+        //- Line 9 -//
+        .home__grid__item
+        .home__grid__scrolltip
+        .home__grid__item
+
+
+
+    //-//////////////// LATEST WORK ////////////////-//
+
+    section.home__latest
+      .home__title__container.home__latest__title__container
+        .home__title(data-animation='reveal-bottom')=latestWork.data.title
+      .projects__wrapper
+        ul
+          each item in latestWork.data.projects_list 
+            li.marquee__item__wrapper
+              a.project__item(href=`latest/${item.project_uid}`)
+                .marquee__item__link__wrapper
+                  .marquee__item__link(data-animation='reveal-bottom')=item.project_name
+
+                .marquee__item__image 
+                  img.marquee__img(src=item.project_image.url)
+
+                .marquee__wrapper.project__marquee
+
+                  .marquee__content 
+                    .marquee__item.marquee__item__details__wrapper
+                      .marquee__item__details=item.project_details_1
+
+                  .marquee__content.duplicated
+                    .marquee__item.marquee__item__details__wrapper
+                      .marquee__item__details=item.project_details_1
+                  
+                  
+
+
+    //-//////////////// ARCHIVE ////////////////-//
+
+    section.home__archive
+      .home__title__container
+        .home__title(data-animation='reveal-bottom')=archive.data.title
+      .home__archive__grids
+        //- Grid 1
+        .home__archive__grid1
+          .home__archive__grid1__1 
+          .home__archive__grid1__2
+            .home__archive__grid1__2__1 
+            .home__archive__grid1__2__2
+        //- Grid 2
+        .home__archive__grid2
+          .home__archive__grid2__1
+            .home__archive__grid2__1__1
+              .home__reveal__paragraph(data-animation='reveal-bottom') 
+                p!=PrismicDOM.RichText.asHtml(archive.data.text)
+            .home__archive__grid2__1__2 
+          .home__archive__grid2__2
+            .home__archive__grid2__2__1 
+            .home__archive__grid2__2__2
+              .home__more__wrapper(data-animation='reveal-bottom')
+                a.btn(href='/archive')='View all'
+                  .arrow__right
+                    +svg-icon(svg-icon-name='arrow-right')
+
+
+
+
+    //-//////////////// ABOUT ////////////////-//
+
+    section.home__about
+      .home__title__container
+        .home__title(data-animation='reveal-bottom')=about.data.title
+      .home__about__info__wrapper 
+        .home__about__info 
+          .home__reveal__paragraph(data-animation='reveal-bottom')
+            p!=PrismicDOM.RichText.asHtml(home.data.home_text_about)
+        .home__about__spacer1
+        .home__about__button
+          .home__more__wrapper(data-animation='reveal-bottom')
+            a.btn(href='/about')='Read more'
+              .arrow__right
+                +svg-icon(svg-icon-name='arrow-right')
+    .home__bottom__space
+  
+      
+      

@@ -1,0 +1,93 @@
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+html {
+  @extend %cover-page;
+  background: $color-white;
+  color: $color-black;
+  font-size: calc(100vw / 1920 * 10);
+  line-height: 1;
+  // font-size: 62.5%;
+  position: fixed;
+  overflow: hidden;
+  @include media('<phone') {
+    font-size: calc(100vw / 750 * 10);
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: auto;
+  }
+}
+
+body {
+  @extend %cover-page;
+  @extend %text-block;
+  font-family: $font-primary;
+  font-weight: 100;
+  position: fixed;
+  @include media('<phone') {
+    position: relative;
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+}
+
+.content {
+  @include media('<phone') {
+    position: relative;
+    height: 100vh;
+    // height: auto;
+    // overflow-x: hidden;
+    // overflow-y: auto;
+  }
+}
+
+a {
+  color: inherit;
+  outline: none;
+  text-decoration: none;
+  // text-decoration-thickness: 1px;
+  cursor: pointer;
+  transition: 0.5s;
+  &:hover {
+    text-decoration: none;
+    transform: scale(1.1);
+    transition: 0.5s;
+  }
+}
+
+button {
+  font-family: $font-primary;
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  outline: none;
+}
+
+img {
+  // opacity: 0;
+  transition: opacity 0.4s ease;
+  vertical-align: middle;
+  &.loaded {
+    opacity: 1;
+  }
+}
+
+strong {
+  font-weight: 400;
+}
+
+.invisible {
+  opacity: 0;
+  transition: 0.5s;
+  pointer-events: none;
+}
+
+// .content {
+//   @extend %cover;
+// }

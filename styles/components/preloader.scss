@@ -1,0 +1,37 @@
+.preloader {
+  @extend %cover;
+  @extend %flex-center;
+  @extend %flex-vertical;
+  @extend %border-right;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 101vw;
+  background: $color-white;
+  color: $color-black;
+  text-align: center;
+  // z-index: z('preloader');
+  z-index: 999;
+}
+
+.preloader__number__text {
+  @extend %page-title;
+  margin-bottom: 3rem;
+}
+
+.preloader__text {
+  font-size: 0;
+  max-width: 67rem;
+
+  span {
+    display: inline-block;
+    overflow: hidden;
+  }
+
+  span span {
+    @extend %text-block;
+    display: inline-block;
+    transform-origin: center center 0.5em;
+  }
+}

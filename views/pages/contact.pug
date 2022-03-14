@@ -1,0 +1,40 @@
+extends ../base.pug
+
+block variables
+  - var template = 'contact'
+
+block content
+  include ../partials/page-transition
+  include ../partials/toggle-navigation
+  .contact.contact__wrapper
+    include ../partials/navigation
+    //- .text__color__container
+    //-   p.text__color='Just call me'
+    .contact__title__container
+      .contact__title(data-animation='reveal-bottom')
+        h1=contact.data.title
+    .contact__grid__wrapper
+      .contact__email__wrapper
+        .email__link(data-animation='reveal-bottom')
+          a.external__link(href=contact.data.email_link target='_blank')=contact.data.email_cta 
+      .contact__phone__wrapper 
+        .contact__phone(data-animation='reveal-bottom')
+          p='+31 6 27576087'
+      .contact__spacer
+      .contact__socials__wrapper
+        ul.socials__list
+          each item in contact.data.social_links 
+            li.socials__item
+              .socials__item__link(data-animation='reveal-bottom')
+                a.external__link(href=item.social_url target='_blank')=item.social_name
+      .contact__line__mobile
+    .contact__bottom__space
+    
+    
+
+
+
+
+
+
+    

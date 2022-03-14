@@ -1,0 +1,77 @@
+block variables
+
+doctype html
+//- html(class=isDesktop ? "desktop" : isTablet ? "tablet" : isPhone ? "phone" : "" lang="en")
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+
+    base(href="/")
+
+    title=meta.data.title
+
+    meta(name="description" content=meta.data.description)
+
+    link(rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png")
+    link(rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png")
+    link(rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png")
+    link(rel="manifest" href="site.webmanifest")
+    link(rel="mask-icon" href="safari-pinned-tab.svg" color="#ff3a00")
+
+    link(href="https://use.typekit.net/cbg5juo.css" rel="stylesheet")
+    link(href="main.css" rel="stylesheet")
+
+    meta(name="msapplication-TileColor" content="#da532c")
+    meta(name="theme-color" content="#ffffff")
+
+    meta(property="og:type" content="website")
+    meta(property="og:title" content=meta.data.title)
+    meta(property="og:description" content=meta.data.description)
+    meta(property="og:image" content=meta.data.image ? meta.data.image.url : '')
+
+    meta(name="twitter:card" content="summary_large_image")
+    meta(name="twitter:title" content=meta.data.title)
+    meta(name="twitter:description" content=meta.data.description)
+    meta(name="twitter:image" content=meta.data.image ? meta.data.image.url : '')
+
+    //- link(rel='preconnect' href='https://www.google-analytics.com')
+    //- link(rel='preconnect' href='https://fonts.gstatic.com')
+
+    //- link(rel='preload' as='style' href='https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap')
+
+    link(rel='preload' as='style' href='https://use.typekit.net/cbg5juo.css')
+
+    //- link(rel='stylesheet' media='print' onload='this.onload=null;this.removeAttribute('media');' href='https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap')
+
+    //- noscript
+    //-   link(rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap')
+
+    noscript 
+      link(rel='stylesheet' href='https://use.typekit.net/cbg5juo.css')
+
+  
+  body
+    include ./partials/preloader
+
+    //- TRANSITION
+    //- include ./partials/page-transition
+
+    //- TOGGLE NAVIGATION
+    //- include ./partials/toggle-navigation
+
+    //- HEADER
+    //- include ./partials/page-transition
+    //- include ./partials/toggle-navigation
+
+    //- CONTENT
+    .content(data-template=template)
+      block content
+
+    //- FOOTER
+    //- include partials/footer
+
+    script.
+      window.ASSETS = !{JSON.stringify(assets).replace(/<\//g, "<\\/")}
+
+    script(src="main.js")

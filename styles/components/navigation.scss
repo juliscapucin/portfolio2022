@@ -1,0 +1,47 @@
+.navigation {
+  @extend %border-bottom;
+  @extend %border-sides;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  background-color: $color-white;
+  width: 90vw;
+  height: 5rem;
+  position: fixed;
+  left: 5vw;
+  z-index: z('navigation');
+}
+
+.navigation__wrapper {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  height: 4rem;
+  overflow: hidden;
+  @include media('<phone') {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.navigation__item {
+  display: flex;
+
+  align-items: flex-end;
+  margin: 0 5rem 0 0;
+}
+
+.navigation__item__link {
+  @extend %text-menu;
+  transition: transform 0.2s ease;
+  &:hover {
+    text-decoration: none;
+    transform: translateY(-1rem);
+  }
+}
+
+#breadcrumb {
+  font-weight: 500;
+  // transform: translateY(-1rem);
+  pointer-events: none;
+}

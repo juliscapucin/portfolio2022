@@ -1,0 +1,60 @@
+extends ../base.pug
+
+block variables
+  - var template = 'projectarchive'
+
+block content
+  include ../partials/page-transition
+  include ../partials/toggle-navigation
+  .project.project__wrapper
+    include ../partials/navigation
+    .project__container
+      .project__title__container
+        .project__title(data-animation='reveal-bottom') 
+          h1=projectArchive.data.project_title
+      .project__text__container
+        .project__text__1 
+          p!=PrismicDOM.RichText.asHtml(projectArchive.data.project_text_1)
+        .project__text__2 
+          p!=PrismicDOM.RichText.asHtml(projectArchive.data.project_text_2)
+      .project__images__container
+        each section, index in projectArchive.data.body
+
+          //- ONE COLUMN
+          if section.slice_type == 'one_column'
+            .project__images
+              //- .project__img__2columns
+              img.project__img__1column(src=section.primary.image.url)
+          //- if section.slice_type == 'one_column'
+          //-   .project__images
+          //-     .project__img__2columns
+          //-     img.project__img__2columns(src=section.primary.image.url)
+
+          //- TWO COLUMNS
+          if section.slice_type == 'two_columns'
+            .project__images
+              each media, mediaIndex in section.items 
+                img.project__img__2columns(src=media.image.url)
+
+          //- THREE COLUMNS      
+          if section.slice_type == 'three_columns'
+            .project__images 
+              each media, mediaIndex in section.items 
+                img.project__img__3columns(src=media.image.url)
+      .project__list__wrapper
+        ul
+          each item, index in archive.data.projects_list 
+            li.project__list__item__wrapper
+              .project__list__item
+                .project__list__item__link__wrapper
+                  a.project__list__item__link(href=`archive/${item.project_uid}` data-animation='reveal-bottom')=item.project_name
+    .project__bottom__space
+    
+    
+
+
+
+
+
+
+    

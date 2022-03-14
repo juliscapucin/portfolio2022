@@ -1,0 +1,44 @@
+extends ../base.pug
+
+block variables
+  - var template = 'about'
+
+include ../svg-icons/svg-icons
+
+block content
+  include ../partials/page-transition
+  include ../partials/toggle-navigation
+  .about.about__wrapper
+    include ../partials/navigation
+    //- .text__color__container
+    //-   p.text__color='Me, myself and I'
+    .about__title__container
+      .about__title(data-animation='reveal-bottom')
+        h1=about.data.title 
+    .about__grid__wrapper 
+      .about__grid1  
+        .about__image__container
+          img.about__image(src=about.data.image.url, alt="") 
+        .about__text__container 
+          p!=PrismicDOM.RichText.asHtml(about.data.text) 
+      .about__grid2
+        .about__grid2__1 
+        .about__grid2__2
+          .about__cta__wrapper(data-animation='reveal-bottom')
+            p=about.data.cta 
+        .about__grid2__3
+        .about__grid2__4
+          a.btn(href='/contact')='Contact me'
+          .arrow__align
+            +svg-icon(svg-icon-name='arrow-right') 
+    .about__bottom__space  
+  .mask
+    
+    
+
+
+
+
+
+
+    

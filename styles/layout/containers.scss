@@ -1,0 +1,11 @@
+%title-container {
+  @extend %border-bottom;
+  @extend %border-sides;
+  margin: auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  max-width: 90vw;
+  height: 34rem;
+  overflow: hidden;
+}

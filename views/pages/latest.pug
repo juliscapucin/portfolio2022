@@ -1,0 +1,44 @@
+extends ../base.pug
+
+block variables
+  - var template = 'latest'
+
+block content
+  include ../partials/page-transition
+  include ../partials/toggle-navigation
+  .latest.latest__wrapper
+    include ../partials/navigation
+    .latest__title__container
+      .latest__title(data-animation='reveal-bottom')
+        h1=latestWork.data.title
+    .projects__wrapper
+      ul
+        each item, index in latestWork.data.projects_list 
+          li.marquee__item__wrapper
+            a.project__item(href=`latest/${item.project_uid}`)
+              
+              .marquee__item__link__wrapper
+                  .marquee__item__link(data-animation='reveal-bottom')=item.project_name
+
+              .marquee__item__image 
+                img.marquee__img(src=item.project_image.url)
+
+              .marquee__wrapper.project__marquee
+
+                .marquee__content 
+                  .marquee__item.marquee__item__details__wrapper
+                    .marquee__item__details=item.project_details_1
+
+                .marquee__content.duplicated
+                  .marquee__item.marquee__item__details__wrapper
+                    .marquee__item__details=item.project_details_1
+    .latest__bottom__space
+    
+    
+
+
+
+
+
+
+    

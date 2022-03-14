@@ -1,0 +1,191 @@
+.project {
+  @extend %page;
+  // @extend %mask;
+  position: relative;
+}
+
+.project__navigation__spacer {
+  @extend %spacer-navigation;
+}
+
+.project__container {
+  @extend %border-bottom;
+  @extend %border-sides;
+  margin: auto;
+  width: 90vw;
+  padding-bottom: 1rem;
+}
+
+.project__title__container {
+  margin: auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  width: 90vw;
+  height: 30rem;
+  // overflow: hidden;
+  @include media('<phone') {
+    // max-width: 100vw;
+    height: 40rem;
+  }
+}
+
+.project__title {
+  @extend %page-title;
+  // @extend %origin-reveal-bottom-title;
+  white-space: nowrap;
+  margin-left: 5rem;
+  @include media('<phone') {
+    white-space: pre-wrap;
+    line-height: 0.8;
+    margin-left: 3rem;
+  }
+}
+
+.project__main__img__container {
+  max-width: 90vw;
+  height: 45vw;
+  @include media('<phone') {
+    height: 90vw;
+  }
+}
+
+.project__img {
+  @extend %cover;
+  width: 100%;
+  object-fit: cover;
+}
+
+.project__text__container {
+  display: flex;
+  justify-content: space-between;
+  width: 90vw;
+  padding: 10rem 6rem 0 6rem;
+  p {
+    margin-top: 2rem;
+    line-height: 1.6;
+  }
+  .project__text__1 {
+    width: 50%;
+  }
+  .project__text__2 {
+    width: 30%;
+  }
+  @include media('<phone') {
+    flex-direction: column;
+    width: 100%;
+    padding: 5rem;
+    .project__text__1,
+    .project__text__2 {
+      width: 100%;
+    }
+  }
+}
+
+.project__btn__wrapper {
+  @extend %origin-reveal-bottom-link;
+  margin: 10rem 0 5rem 0;
+  display: flex;
+  justify-content: flex-end;
+  @include media('<phone') {
+    margin-bottom: 10rem;
+  }
+}
+
+.project__title,
+.project__img__2columns {
+  width: 50%;
+}
+
+.project__images__container {
+  margin-bottom: 17rem;
+}
+
+.project__images {
+  @extend %flex-center;
+  max-width: 95%;
+  max-height: 90rem;
+  margin: 3rem auto;
+  overflow: hidden;
+  @include media('<phone') {
+    max-height: 60rem;
+    margin: 2rem auto;
+    display: block;
+  }
+}
+
+.project__mobile {
+  @include media('<phone') {
+    display: none;
+  }
+}
+
+.project__img__1column {
+  height: 100%;
+  width: 100%;
+
+  // > img {
+  //   height: 100%;
+  //   object-fit: contain;
+  // }
+}
+
+.project__img__3columns {
+  width: 33.3%;
+}
+
+.project__img__2columns {
+  width: 50%;
+}
+
+.project__img__2columns,
+.project__img__3columns {
+  @extend %cover;
+  object-fit: cover;
+  padding: 1rem;
+  @include media('<phone') {
+    width: 100%;
+  }
+}
+
+.project__list__wrapper {
+  margin: auto;
+  max-width: 90vw;
+}
+
+.project__list__item__wrapper {
+  overflow: hidden;
+}
+
+.project__list__item {
+  @extend %spacer-lines-project;
+}
+
+.project__list__item__link__wrapper {
+  @extend %text-lines;
+}
+
+.project__list__item__link {
+  @extend %origin-reveal-bottom-link;
+}
+
+.project__next__container {
+  margin: auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  max-width: 90vw;
+  height: 34rem;
+  padding-bottom: 1rem;
+  overflow: hidden;
+}
+
+.project__next {
+  @extend %page-title;
+  @extend %origin-reveal-bottom-title;
+  margin: 0 2rem;
+}
+
+.project__bottom__space {
+  @extend %spacer17;
+}

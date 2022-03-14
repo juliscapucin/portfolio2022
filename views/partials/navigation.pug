@@ -1,0 +1,5 @@
+.navigation
+  ul.navigation__wrapper
+    each item in navigation.data.nav_bar 
+      li.navigation__item
+        a.navigation__item__link(href=item.nav_item_link class=item.nav_item_name)=item.nav_item_name

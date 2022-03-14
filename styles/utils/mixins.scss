@@ -1,0 +1,57 @@
+%cover {
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 100%;
+  // position: absolute;
+}
+
+%cover-page {
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 100vw;
+}
+
+%full-viewport {
+  height: 100vh;
+  left: 0;
+  top: 0;
+  width: 100vw;
+}
+
+%flex-horizontal {
+  display: flex;
+  flex-direction: horizontal;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+
+%flex-vertical {
+  flex-direction: column;
+}
+
+%flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+%flex-top {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+@mixin ratio($height, $width) {
+  font-size: 0;
+  overflow: hidden;
+  position: relative;
+
+  &:after {
+    content: '';
+    display: inline-block;
+    padding-top: $width / $height * 100%;
+    width: 100%;
+  }
+}

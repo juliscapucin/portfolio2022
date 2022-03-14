@@ -1,0 +1,49 @@
+extends ../base.pug
+
+block variables
+  - var template = 'archive'
+
+include ../svg-icons/svg-icons
+
+block content
+  include ../partials/page-transition
+  include ../partials/toggle-navigation
+  .archive.archive__wrapper
+    include ../partials/navigation
+    //- .text__color__container
+    //-   p.text__color='Old stuff'
+    .archive__title__container
+      .archive__title(data-animation='reveal-bottom')
+        h1=archive.data.title 
+    .projects__wrapper
+      ul
+        each item, index in archive.data.projects_list 
+          li.marquee__item__wrapper
+            a.project__item(href=`archive/${item.project_uid}`)
+              
+              .marquee__item__link__wrapper
+                  .marquee__item__link(data-animation='reveal-bottom')=item.project_name
+
+              .marquee__item__image 
+                img.marquee__img(src=item.project_image.url)
+
+              .marquee__wrapper.project__marquee
+
+                .marquee__content 
+                  .marquee__item.marquee__item__details__wrapper
+                    .marquee__item__details=item.project_details
+
+                .marquee__content.duplicated
+                  .marquee__item.marquee__item__details__wrapper
+                    .marquee__item__details=item.project_details
+    .archive__bottom__space  
+  .mask
+    
+    
+
+
+
+
+
+
+    

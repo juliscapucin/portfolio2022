@@ -1,0 +1,25 @@
+.btn {
+  @extend %text-list;
+  line-height: 1;
+  margin-right: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.btn__scroll {
+  @extend %text-list;
+  line-height: 1;
+  margin-right: 2rem;
+}
+
+.arrow__down {
+  transform: rotate(90deg);
+  padding-left: 1rem;
+}
+
+.arrow__right {
+  padding-left: 2rem;
+  @include media('<phone') {
+    transform: translateY(10%);
+  }
+}

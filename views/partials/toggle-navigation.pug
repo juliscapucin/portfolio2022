@@ -1,0 +1,22 @@
+nav.toggle__navigation
+
+  .burger 
+    span
+    span
+    span
+  .burger__bg
+    .burger__bg__sides
+    .burger__bg__center
+    .burger__bg__sides
+  .burger__bg__toggle
+    .burger__bg__sides
+    .burger__bg__center
+    .burger__bg__sides
+
+  ul.toggle__nav
+    .toggle__nav__sides
+    .toggle__nav__center
+      each item in navigation.data.nav_bar 
+        li.toggle__nav__item
+          a.toggle__nav__item__link(href=item.nav_item_link)=item.nav_item_name
+    .toggle__nav__sides

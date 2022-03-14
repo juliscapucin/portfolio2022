@@ -1,0 +1,40 @@
+%spacer-navigation {
+  @extend %border-sides;
+  @extend %border-bottom;
+  margin: auto;
+  position: fixed;
+  min-height: 5rem;
+  max-width: 90vw;
+}
+
+%spacer17 {
+  @extend %border-sides;
+  margin: auto;
+  min-height: 17rem;
+  max-width: 90vw;
+}
+
+%spacer-lines {
+  @extend %border-bottom;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: 17rem;
+  padding-left: 6rem;
+  @include media('<phone') {
+    padding-left: 4rem;
+  }
+}
+
+%spacer-lines-project {
+  @extend %border-top;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  height: 17rem;
+  padding: 0 5rem;
+}

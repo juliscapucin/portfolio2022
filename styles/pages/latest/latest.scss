@@ -1,0 +1,44 @@
+.latest {
+  @extend %page;
+  // @extend %mask;
+  position: relative;
+}
+
+.latest__navigation__spacer {
+  @extend %spacer-navigation;
+}
+
+.latest__title__container {
+  @extend %title-container;
+  overflow: visible;
+}
+
+.latest__title {
+  @extend %page-title;
+  @extend %origin-reveal-bottom-title;
+  margin-left: 5rem;
+  @include media('<phone') {
+    margin-left: 3rem;
+  }
+}
+
+.latest__project__item__wrapper {
+  overflow: hidden;
+}
+
+.latest__project__item {
+  @extend %spacer-lines;
+}
+
+.latest__project__item__link__wrapper {
+  @extend %text-lines;
+}
+
+.latest__project__item__link {
+  @extend %origin-reveal-bottom-link;
+}
+
+.latest__bottom__space {
+  @extend %spacer17;
+  min-height: 70rem;
+}
