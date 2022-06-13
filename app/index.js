@@ -11,6 +11,7 @@ import Archive from 'pages/Archive'
 import Contact from 'pages/Contact'
 import Home from 'pages/Home'
 import Latest from 'pages/Latest'
+import Playground from 'pages/Playground'
 import Project from 'pages/Project'
 import ProjectArchive from 'pages/ProjectArchive'
 
@@ -50,6 +51,7 @@ class App {
       contact: new Contact(),
       home: new Home(),
       latest: new Latest(),
+      playground: new Playground(),
       project: new Project(),
       projectarchive: new ProjectArchive(),
     }

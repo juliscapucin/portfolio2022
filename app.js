@@ -79,6 +79,7 @@ const handleRequest = async (api) => {
   const latestWork = await api.getSingle('latest_work')
   const meta = await api.getSingle('meta')
   const navigation = await api.getSingle('navigation')
+  const playground = await api.getSingle('playground')
   const preloader = await api.getSingle('preloader')
 
   const { results: projects } = await api.query(
@@ -149,6 +150,7 @@ const handleRequest = async (api) => {
     latestWork,
     meta,
     navigation,
+    playground,
     preloader,
     projects,
     projects_archive,
@@ -212,6 +214,13 @@ app.get('/contact', async (req, res) => {
   const defaults = await handleRequest(api)
 
   res.render('pages/contact', { contact, ...defaults })
+})
+
+app.get('/playground', async (req, res) => {
+  const api = await initApi(req)
+  const defaults = await handleRequest(api)
+
+  res.render('pages/playground', { ...defaults })
 })
 
 app.listen(port, () => {
