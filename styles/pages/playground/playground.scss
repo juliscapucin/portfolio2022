@@ -39,5 +39,9 @@
 }
 
 .playground__bottom__space {
-  @extend %spacer17;
+  // @extend %spacer17;
+  @extend %border-sides;
+  margin: auto;
+  max-width: 90vw;
+  height: clamp(20rem, 60vh, 90rem);
 }

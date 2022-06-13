@@ -14,13 +14,17 @@ export default class RevealBottom extends AnimationScroll {
     this.animatedIn = true
     this.timelineIn = GSAP.timeline()
 
-    this.timelineIn.to(this.element, {
-      y: 0,
-      autoAlpha: 1,
-      duration: 1,
-      ease: 'expo.out',
-      delay: 0.2,
-    })
+    this.timelineIn.fromTo(
+      this.element,
+      { autoAlpha: 0 },
+      {
+        y: 0,
+        autoAlpha: 1,
+        duration: 1,
+        ease: 'expo.out',
+        delay: 0.2,
+      }
+    )
     this.isVisible = true
   }
 

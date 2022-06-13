@@ -16,8 +16,9 @@
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-  height: 4rem;
+  height: 5rem;
   overflow: hidden;
+  padding-bottom: 0.6rem;
   @include media('<phone') {
     opacity: 0;
     pointer-events: none;
@@ -36,7 +37,7 @@
   transition: transform 0.2s ease;
   &:hover {
     text-decoration: none;
-    transform: translateY(-1rem);
+    transform: translateY(-0.8rem);
   }
 }
 
