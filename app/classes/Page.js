@@ -142,6 +142,7 @@ export default class Page {
       const buttonLatest = navBar.querySelector('.Latest')
       const buttonContact = navBar.querySelector('.Contact')
       const buttonAbout = navBar.querySelector('.About')
+      const buttonPlayground = navBar.querySelector('.Playground')
 
       const allButtons = document.querySelectorAll('.navigation__item__link')
 
@@ -188,6 +189,10 @@ export default class Page {
         // Project Archive animations
       } else if (findPage === 'projectarchive') {
         addBreadcrumb(buttonArchive)
+        // Playground animations
+      } else if (findPage === 'playground') {
+        addBreadcrumb(buttonPlayground)
+        Marquee()
       }
 
       // Full page fade in
