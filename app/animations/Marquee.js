@@ -1,6 +1,9 @@
 export default function Marquee() {
   let projectItems = [...document.querySelectorAll('.project__item')]
-  let mainWrapper = document.querySelector('.projects__wrapper')
+  let mainWrapperLatest = document.querySelector('.projects__wrapper')
+  let mainWrapperPlayground = document.querySelector(
+    '.playground__projects__wrapper'
+  )
   const allImages = document.querySelectorAll('.marquee__item__image')
 
   // IMAGE TRAIL INITIAL VALUES
@@ -60,7 +63,10 @@ export default function Marquee() {
   animateY()
 
   document.addEventListener('mousemove', setXPosition)
-  mainWrapper.addEventListener('mousemove', setYPosition)
+  mainWrapperLatest.addEventListener('mousemove', setYPosition)
+  if (mainWrapperPlayground !== null) {
+    mainWrapperPlayground.addEventListener('mousemove', setYPosition)
+  }
 
   /////////////////////////////
   /// EVENTS ON PROJECT ITEMS

@@ -1,4 +1,5 @@
-.projects__wrapper {
+.projects__wrapper,
+.playground__projects__wrapper {
   @extend %border-sides;
   margin: auto;
   width: 90vw;
