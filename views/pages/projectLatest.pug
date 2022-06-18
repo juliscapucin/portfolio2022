@@ -12,6 +12,10 @@ block content
     include ../partials/navigation
     .project__container
       .project__title__container
+        a.project__back(href='/latest') 
+          .arrow__left
+            +svg-icon(svg-icon-name='arrow-right')
+          .back__link__container='Back'
         .project__title(data-animation='reveal-bottom') 
           h1=projectLatest.data.project_title
       .project__main__img__container 
@@ -29,8 +33,8 @@ block content
         each section, index in projectLatest.data.body
           if section.slice_type == 'one_column'
             .project__images
-              //- .project__img__1column.project__mobile
-              img.project__img__1column(src=section.primary.image.url)
+              .project__img__1column
+                img(src=section.primary.image.url)
           if section.slice_type == 'two_columns'
             .project__images
               each media, mediaIndex in section.items 
