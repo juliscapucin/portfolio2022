@@ -155,8 +155,9 @@ block content
           .home__archive__grid2__2
             .home__archive__grid2__2__1 
             .home__archive__grid2__2__2
-              .home__more__wrapper(data-animation='reveal-bottom')
-                a.btn(href='/archive')='View all'
+              a(href='/archive')
+                .home__more__wrapper(data-animation='reveal-bottom')
+                  .btn='View all'
                   .arrow__right
                     +svg-icon(svg-icon-name='arrow-right')
 
@@ -172,8 +173,9 @@ block content
             p!=PrismicDOM.RichText.asHtml(home.data.home_text_about)
         .home__about__spacer1
         .home__about__button
-          .home__more__wrapper(data-animation='reveal-bottom')
-            a.btn(href='/about')='Read more'
+          a(href='/about')
+            .home__more__wrapper(data-animation='reveal-bottom')
+              .btn='Read more'
               .arrow__right
                 +svg-icon(svg-icon-name='arrow-right')
     .home__bottom__space

@@ -18,10 +18,8 @@
 }
 
 .arrow__right {
-  padding-left: 2rem;
-  @include media('<phone') {
-    transform: translateY(10%);
-  }
+  // padding-left: 2rem;
+  transform: translateY(10%);
 }
 
 .arrow__left {

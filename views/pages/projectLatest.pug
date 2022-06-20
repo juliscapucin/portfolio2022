@@ -23,10 +23,12 @@ block content
       .project__text__container 
         .project__text__1
           p!=PrismicDOM.RichText.asHtml(projectLatest.data.project_text_1)
-          .project__btn__wrapper(data-animation='reveal-bottom')
-            a.btn.external__link(href=projectLatest.data.project_url target='_blank')='Visit Website'
-              .arrow__right
-                +svg-icon(svg-icon-name='arrow-right')
+          .visit__site__btn
+            a.external__link(href=projectLatest.data.project_url target='_blank')
+              .project__btn__wrapper(data-animation='reveal-bottom')
+                .btn='Visit Website'
+                .arrow__right
+                  +svg-icon(svg-icon-name='arrow-right')
         .project__text__2
           p.project__text__2!=PrismicDOM.RichText.asHtml(projectLatest.data.project_text_2)
       .project__images__container

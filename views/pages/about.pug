@@ -31,9 +31,11 @@ block content
             p=about.data.cta 
         .about__grid3__3
         .about__grid3__4
-          a.btn(href='/contact')='Contact me'
-          .arrow__align
-            +svg-icon(svg-icon-name='arrow-right') 
+          a(href='/contact')
+            .home__more__wrapper(data-animation='reveal-bottom')
+              .btn='Contact me'
+              .arrow__right
+                +svg-icon(svg-icon-name='arrow-right')
     .about__bottom__space  
   .mask
     

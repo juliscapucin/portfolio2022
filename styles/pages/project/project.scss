@@ -26,7 +26,7 @@
   // overflow: hidden;
   @include media('<phone') {
     // max-width: 100vw;
-    height: 40rem;
+    height: 45rem;
   }
 }
 
@@ -39,7 +39,6 @@
   @include media('<phone') {
     white-space: pre-wrap;
     line-height: 0.8;
-    margin-left: 3rem;
   }
 }
 
@@ -52,6 +51,9 @@
   align-items: center;
   justify-content: flex-start;
   width: fit-content;
+  @include media('<phone') {
+    margin: 12rem auto 2rem 4rem;
+  }
 }
 
 .back__link__container {
@@ -103,11 +105,21 @@
 
 .project__btn__wrapper {
   @extend %origin-reveal-bottom-link;
-  margin: 10rem 0 5rem 0;
+  margin: 10rem 0 0 0;
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   @include media('<phone') {
     margin-bottom: 10rem;
+  }
+}
+
+.visit__site__btn {
+  @extend %flex-center;
+  height: 17rem;
+  width: 100%;
+  @include media('<phone') {
+    min-width: 60vw;
   }
 }
 
@@ -123,11 +135,10 @@
 .project__images {
   @extend %flex-center;
   max-width: 95%;
-  max-height: 90rem;
+  height: fit-content;
   margin: 3rem auto;
   overflow: hidden;
   @include media('<phone') {
-    max-height: 60rem;
     margin: 2rem auto;
     display: block;
   }
@@ -144,6 +155,10 @@
   width: 100%;
   display: flex;
   justify-content: center;
+
+  @include media('<phone') {
+    height: 46rem;
+  }
 
   > img {
     height: 100%;
