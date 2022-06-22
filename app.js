@@ -80,6 +80,7 @@ const handleRequest = async (api) => {
   const meta = await api.getSingle('meta')
   const navigation = await api.getSingle('navigation')
   const playground = await api.getSingle('playground')
+  const playgroundHome = playground.data.projects_list.slice(0, 4)
   const preloader = await api.getSingle('preloader')
 
   const { results: projects } = await api.query(
@@ -151,6 +152,7 @@ const handleRequest = async (api) => {
     meta,
     navigation,
     playground,
+    playgroundHome,
     preloader,
     projects,
     projects_archive,

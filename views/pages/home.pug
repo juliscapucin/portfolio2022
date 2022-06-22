@@ -113,7 +113,7 @@ block content
         .home__title(data-animation='reveal-bottom')=playground.data.title
       .playground__projects__wrapper
         ul
-          each item in playground.data.projects_list 
+          each item in playgroundHome
             li.marquee__item__wrapper
               a.project__item.external__link(href=item.project_url target='_blank')
                 .marquee__item__link__wrapper
@@ -131,6 +131,13 @@ block content
                   .marquee__content.duplicated
                     .marquee__item.marquee__item__details__wrapper
                       .marquee__item__details=item.project_details
+          .home__playground__button__container
+            .home__playground__more__spacer
+            a(href='/playground')
+              .home__playground__more__wrapper(data-animation='reveal-bottom')
+                .btn='View all'
+                .arrow__right
+                  +svg-icon(svg-icon-name='arrow-right')
 
 
     //-//////////////// ARCHIVE ////////////////-//
