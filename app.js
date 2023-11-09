@@ -9,7 +9,7 @@ const UAParser = require('ua-parser-js')
 
 const app = express()
 const path = require('path')
-const port = 7700
+const port = 3300
 
 app.use(logger('dev'))
 app.use(bodyParser.json())
